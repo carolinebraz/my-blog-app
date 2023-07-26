@@ -2,45 +2,77 @@ function Home() {
     return (
         <>
             <div>
-                <h3 className='text-xl'>justify-content [alinhamento horizontal dos elementos]</h3>
-                <h5>justify-start: alinha os elementos à esquerda</h5>
-                <div className="flex flex-row  justify-start m-3">
-                    <div className='basis-1/4 bg-blue-200'>01</div>
-                    <div className='basis-1/4 bg-blue-800'>02</div>
-                </div>
-                <h5>justify-end: alinha os elementos à direita</h5>
-                <div className="flex flex-row  justify-end m-3">
-                    <div className='basis-1/4 bg-blue-200'>01</div>
-                    <div className='basis-1/4 bg-blue-800'>02</div>
-                </div>
-                <h5>justify-center: alinha os elementos ao centro</h5>
-                <div className="flex flex-row  justify-center m-3">
-                    <div className='basis-1/4 bg-blue-200'>01</div>
-                    <div className='basis-1/4 bg-blue-800'>02</div>
-                </div>
-                <h5>justify-between: adiciona espaço entre os elementos</h5>
-                <div className="flex flex-row  justify-between m-3">
-                    <div className='basis-1/4 bg-blue-200'>01</div>
-                    <div className='basis-1/4 bg-blue-800'>02</div>
-                </div>
-                <h5>justify-around: adiciona espaço ao redor dos elementos</h5>
-                <div className="flex flex-row  justify-around m-3">
-                    <div className='basis-1/4 bg-blue-200'>01</div>
-                    <div className='basis-1/4 bg-blue-800'>02</div>
-                </div>
-            </div>
 
-            <div className='mt-12'>
-                <h3 className='text-xl'>items-content [alinhamento vertical dos elementos]</h3>
-                <div className='w-auto h-60 bg-blue-800 flex justify-center items-start m-3'>
-                    <div className='basis-1/4 bg-blue-200'>justify-center items-start alinhamento horizontal centro/vertical topo</div>
+                <div className='grid grid-cols-12 gap-2 m-4'>
+                    <div className='col-span-6 bg-purple-300'>
+                        Container 1
+                    </div>
+
+                    <div className='col-span-6 bg-cyan-200'>
+                        Container 2
+                    </div>
                 </div>
-                <div className='w-auto h-60 bg-blue-800 flex  justify-center items-center m-3'>
-                    <div className='basis-1/4 bg-blue-200'>justify-center items-start alinhamento horizontal centro/vertical centro</div>
+
+                <div className='grid grid-cols-12 gap-2 m-4'>
+                    <div className='col-span-8 bg-blue-300'>
+                        Container 1
+                    </div>
+
+                    <div className='col-span-4 bg-violet-200'>
+                        Container 2
+                    </div>
                 </div>
-                <div className='w-auto h-60 bg-blue-800 flex  justify-center items-end m-3'>
-                    <div className='basis-1/4 bg-blue-200'>justify-center items-start alinhamento horizontal centro/vertical base</div>
+
+                <div className='grid grid-cols-12 gap-2 m-4'>
+                    <div className='col-span-4 bg-green-300'>
+                        Container 1
+                    </div>
+
+                    <div className='col-span-4 bg-emerald-200'>
+                        Container 2
+                    </div>
+
+                    <div className='col-span-4 bg-lime-500'>
+                        Container 3
+                    </div>
                 </div>
+
+                <div className='grid grid-cols-12 gap-2 m-4'>
+                    <div className='col-span-3 bg-red-300'>
+                        Container 1
+                    </div>
+
+                    <div className='col-span-3 bg-amber-200'>
+                        Container 2
+                    </div>
+
+                    <div className='col-span-3 bg-orange-500'>
+                        Container 3
+                    </div>
+
+                    <div className='col-span-3 bg-yellow-500'>
+                        Container 4
+                    </div>
+                </div>
+
+                <div className='grid grid-cols-12 gap-2 m-4'>
+                    <div className='col-span-4 bg-sky-300'>
+                        Container 1
+                    </div>
+
+                    <div className='col-span-4 bg-pink-200'>
+                        Container 2
+                    </div>
+
+                    <div className='col-span-2 bg-fuchsia-500'>
+                        Container 3
+                    </div>
+
+                    <div className='col-span-2 bg-rose-500'>
+                        Container 4
+                    </div>
+                </div>
+                
             </div>
         </>
     );
