@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
@@ -14,6 +15,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
