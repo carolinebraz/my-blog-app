@@ -1,15 +1,15 @@
 import './App.css';
-import Footer from './components/footer/Footer';
+import { AuthProvider } from './contexts/AuthContext';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
-import UserProvider from './contexts/UserContext';
+import Footer from './components/footer/Footer';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <>
-      <UserProvider>
+      <AuthProvider>
         <BrowserRouter>
           <Navbar />
           <Routes>
@@ -19,8 +19,9 @@ function App() {
           </Routes>
           <Footer />
         </BrowserRouter>
-      </UserProvider>
+      </AuthProvider>
     </>
   );
 }
+
 export default App;
