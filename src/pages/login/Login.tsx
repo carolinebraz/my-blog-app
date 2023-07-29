@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import { RotatingLines } from 'react-loader-spinner';
 import UserLogin from '../../models/UserLogin';
+import './Login.css';
 
 function Login() {
     let navigate = useNavigate();
@@ -37,12 +38,12 @@ function Login() {
                 <form className="flex justify-center items-center flex-col w-1/2 gap-4" onSubmit={login}>
                     <h2 className="text-slate-900 text-5xl ">Login</h2>
                     <div className="flex flex-col w-full">
-                        <label htmlFor="user">User</label>
+                        <label htmlFor="user">Email</label>
                         <input
                             type="text"
                             id="user"
                             name="usuario"
-                            placeholder="User"
+                            placeholder="Email"
                             className="border-2 border-slate-700 rounded p-2"
                             value={userLogin.name}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)}
@@ -60,7 +61,7 @@ function Login() {
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)}
                         />
                     </div>
-                    <button type='submit' className="rounded bg-indigo-400 hover:bg-indigo-900 text-white w-1/2 py-2 flex justify-center">
+                    <button type='submit' className="rounded bg-[#110867] hover:bg-[#1904CA] text-white w-1/2 py-2 flex justify-center">
                         {isLoading ? <RotatingLines
                             strokeColor="white"
                             strokeWidth="5"
@@ -75,12 +76,12 @@ function Login() {
 
                     <p>
                         Don't have an account?{' '}
-                        <Link to="/cadastro" className="text-indigo-800 hover:underline">
+                        <Link to="/register" className="text-indigo-800 hover:underline">
                             Sign up
                         </Link>
                     </p>
                 </form>
-                <div className="fundoLogin hidden lg:block"></div>
+                <div className="bgLogin hidden lg:block"></div>
             </div>
         </>
     );
