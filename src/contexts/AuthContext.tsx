@@ -19,10 +19,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
     const [user, setUser] = useState<UserLogin>({
         id: 0,
-        name: "",
-        user: "",
-        password: "",
-        avatar: "",
+        nome: "",
+        usuario: "",
+        senha: "",
+        foto: "",
         token: ""
     })
 
@@ -45,10 +45,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
     function handleLogout() {
         setUser({
             id: 0,
-            name: "",
-            user: "",
-            password: "",
-            avatar: "",
+            nome: "",
+            usuario: "",
+            senha: "",
+            foto: "",
             token: ""
         })
     }

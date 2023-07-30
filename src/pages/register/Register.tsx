@@ -11,18 +11,18 @@ function Register() {
 
     const [user, setUser] = useState<User>({
         id: 0,
-        name: '',
-        user: '',
-        password: '',
-        avatar: ''
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: ''
     })
 
     const [userResp, setUserResp] = useState<User>({
         id: 0,
-        name: '',
-        user: '',
-        password: '',
-        avatar: ''
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: ''
     })
 
     useEffect(() => {
@@ -49,7 +49,7 @@ function Register() {
     async function registerNewUser(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
 
-        if (confirmPassword === user.password && user.password.length >= 8) {
+        if (confirmPassword === user.senha && user.senha.length >= 8) {
 
             try {
                 await registerUser(`/usuarios/cadastrar`, user, setUserResp)
@@ -61,7 +61,7 @@ function Register() {
 
         } else {
             alert('Inconsistent data. Check registration information.')
-            setUser({ ...user, password: "" })
+            setUser({ ...user, senha: "" })
             setConfirmPassword("")
         }
     }
@@ -81,7 +81,7 @@ function Register() {
                             name="nome"
                             placeholder="Full Name"
                             className="border-2 border-slate-700 rounded p-2"
-                            value={user.name}
+                            value={user.nome}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)}
                         />
                     </div>
@@ -93,7 +93,7 @@ function Register() {
                             name="usuario"
                             placeholder="Email"
                             className="border-2 border-slate-700 rounded p-2"
-                            value={user.user}
+                            value={user.usuario}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)}
                         />
                     </div>
@@ -105,7 +105,7 @@ function Register() {
                             name="foto"
                             placeholder="Avatar"
                             className="border-2 border-slate-700 rounded p-2"
-                            value={user.avatar}
+                            value={user.foto}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)}
                         />
                     </div>
@@ -117,7 +117,7 @@ function Register() {
                             name="senha"
                             placeholder="Password"
                             className="border-2 border-slate-700 rounded p-2"
-                            value={user.password}
+                            value={user.senha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)}
                         />
                     </div>

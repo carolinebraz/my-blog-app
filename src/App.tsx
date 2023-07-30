@@ -9,6 +9,9 @@ import Register from './pages/register/Register';
 import TopicList from './components/topics/TopicList';
 import TopicForm from './components/topics/TopicForm';
 import DeleteTopic from './components/topics/DeleteTopic';
+import PostList from './components/posts/PostList';
+import PostForm from './components/posts/PostForm';
+import DeletePost from './components/posts/DeletePost';
 
 function App() {
   return (
@@ -18,7 +21,7 @@ function App() {
           <Navbar />
           <div className='min-h-[80vh]'>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Login />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/home" element={<Home />} />
@@ -26,6 +29,10 @@ function App() {
               <Route path="/addTopic" element={<TopicForm />} />
               <Route path="/editTopic/:id" element={<TopicForm />} />
               <Route path="/deleteTopic/:id" element={<DeleteTopic />} />
+              <Route path="/posts" element={<PostList />} />
+              <Route path="/addPost" element={<PostForm />} />
+              <Route path="/editPost/:id" element={<PostForm />} />
+              <Route path="/deletePost/:id" element={<DeletePost />} />
             </Routes>
           </div>
           <Footer />

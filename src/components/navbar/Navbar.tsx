@@ -18,7 +18,8 @@ function Navbar() {
                     <Link to='/home' className='text-2xl font-bold uppercase'>My blog</Link>
 
                     <div className='flex gap-4'>
-                        <div className='hover:underline'>Posts</div>
+                        <Link to='/posts' className='hover:underline'>Posts</Link>
+                        <Link to='/addPost' className='hover:underline'>Add post</Link>
                         <Link to='/topics' className='hover:underline'>Topics</Link>
                         <Link to='/addTopic' className='hover:underline'>Add topic</Link>
                         <div className='hover:underline'>Profile</div>
