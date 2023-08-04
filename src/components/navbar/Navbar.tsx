@@ -22,7 +22,7 @@ function Navbar() {
                         <Link to='/addPost' className='hover:underline'>Add post</Link>
                         <Link to='/topics' className='hover:underline'>Topics</Link>
                         <Link to='/addTopic' className='hover:underline'>Add topic</Link>
-                        <div className='hover:underline'>Profile</div>
+                        <Link to='/profile' className='hover:underline'>Profile</Link>
                         <Link to='/login' onClick={logout} className='hover:underline'>Logout</Link>
                     </div>
                 </div>

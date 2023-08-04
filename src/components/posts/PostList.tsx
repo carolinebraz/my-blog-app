@@ -32,6 +32,8 @@ function PostList() {
             if (error.toString().includes('403')) {
                 alert('Token has expired, please login again')
                 handleLogout()
+            } else if (error.status(400)) {
+                alert('Bad request')
             }
         }
     }

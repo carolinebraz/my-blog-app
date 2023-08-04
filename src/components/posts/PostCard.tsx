@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Post from '../../models/Post'
+import avatar from '../../assets/img/avatar.png'
 
 interface PostCardProps {
     post: Post
@@ -10,7 +11,12 @@ function PostCard({ post }: PostCardProps) {
         <div className='border-slate-900 border flex flex-col rounded overflow-hidden justify-between'>
             <div>
                 <div className="flex w-full bg-[#190493] py-2 px-4 items-center gap-4">
-                    <img src={post.usuario?.foto} className='h-12 rounded-full' alt="" />
+                    {post.usuario?.foto == "" ? (
+                        <img src={avatar} className='h-12 rounded-full' alt={`${post.usuario?.nome} doesn't have a profile picture`} />
+                    ) : (
+                        <img src={post.usuario?.foto} className='h-12 rounded-full' alt={`${post.usuario?.nome}'s profile picture`} />
+                    )
+                    }
                     <h3 className='text-lg font-bold text-center text-white uppercase '>{post.usuario?.nome}</h3>
                 </div>
                 <div className='p-4 '>
