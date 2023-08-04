@@ -1,8 +1,9 @@
+import './Register.css';
 import { useNavigate } from 'react-router-dom';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { registerUser } from '../../services/Service';
+import { toastAlert } from '../../util/toastAlert';
 import User from '../../models/User';
-import './Register.css';
 
 function Register() {
     let navigate = useNavigate()
@@ -53,19 +54,18 @@ function Register() {
 
             try {
                 await registerUser(`/usuarios/cadastrar`, user, setUserResp)
-                alert('Successfully registered user')
+                toastAlert('Successfully registered user', 'success')
 
             } catch (error) {
-                alert('Error registering user')
+                toastAlert('Error registering user', 'error')
             }
 
         } else {
-            alert('Inconsistent data. Check registration information.')
+            toastAlert('Inconsistent data. Check registration information.', 'warning')
             setUser({ ...user, senha: "" })
             setConfirmPassword("")
         }
     }
-
 
     return (
         <>

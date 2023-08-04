@@ -1,8 +1,9 @@
-import { useContext, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { AuthContext } from '../../contexts/AuthContext'
-import cover from '../../assets/img/cover.png'
-import avatar from '../../assets/img/avatar.png'
+import { useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
+import { toastAlert } from '../../util/toastAlert';
+import cover from '../../assets/img/cover.png';
+import avatar from '../../assets/img/avatar.png';
 
 function Profile() {
     let navigate = useNavigate()
@@ -11,7 +12,7 @@ function Profile() {
 
     useEffect(() => {
         if (user.token === "") {
-            alert('You must be logged in')
+            toastAlert('You must be logged in', 'warning')
             navigate("/login")
         }
     }, [user.token])

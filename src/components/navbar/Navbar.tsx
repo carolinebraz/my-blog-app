@@ -1,6 +1,7 @@
-import { useContext } from 'react'
-import { Link } from "react-router-dom"
-import { AuthContext } from "../../contexts/AuthContext"
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
+import { toastAlert } from '../../util/toastAlert';
 
 function Navbar() {
 
@@ -8,7 +9,7 @@ function Navbar() {
 
     function logout() {
         handleLogout()
-        alert('See you soon')
+        toastAlert('See you soon', 'info')
     }
 
     return (

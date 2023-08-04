@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
-import Post from '../../models/Post'
-import avatar from '../../assets/img/avatar.png'
+import { Link } from 'react-router-dom';
+import Post from '../../models/Post';
+import avatar from '../../assets/img/avatar.png';
 
 interface PostCardProps {
     post: Post

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import { search } from '../../services/Service';
 import { Dna } from 'react-loader-spinner';
+import { toastAlert } from '../../util/toastAlert';
 import TopicCard from '../topics/TopicCard';
 import Topic from '../../models/Topic';
 
@@ -21,7 +22,7 @@ function TopicList() {
             });
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('Token has expired, please login again')
+                toastAlert('Token has expired, please login again', 'error')
                 handleLogout()
             }
         }
@@ -29,7 +30,7 @@ function TopicList() {
 
     useEffect(() => {
         if (token === '') {
-            alert('You must be logged in');
+            toastAlert('You must be logged in', 'warning');
             navigate('/login');
         }
     }, [token]);

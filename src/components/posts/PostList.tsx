@@ -3,6 +3,7 @@ import { Dna } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import { search } from '../../services/Service';
+import { toastAlert } from '../../util/toastAlert'
 import Post from '../../models/Post';
 import PostCard from '../posts/PostCard';
 
@@ -16,7 +17,7 @@ function PostList() {
 
     useEffect(() => {
         if (token === '') {
-            alert('You must be logged in');
+            toastAlert('You must be logged in', 'warning');
             navigate('/');
         }
     }, [token]);
@@ -30,10 +31,8 @@ function PostList() {
             });
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('Token has expired, please login again')
+                toastAlert('Token has expired, please login again', error)
                 handleLogout()
-            } else if (error.status(400)) {
-                alert('Bad request')
             }
         }
     }

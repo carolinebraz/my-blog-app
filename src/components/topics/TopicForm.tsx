@@ -2,6 +2,7 @@ import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import { update, search, register } from '../../services/Service';
+import { toastAlert } from '../../util/toastAlert';
 import Topic from '../../models/Topic';
 
 function TopicForm() {
@@ -46,15 +47,15 @@ function TopicForm() {
                     }
                 })
 
-                alert('Successfully updated topic')
+                toastAlert('Successfully updated topic', 'success')
                 back()
 
             } catch (error: any) {
                 if (error.toString().includes('403')) {
-                    alert('Token has expired, please login again')
+                    toastAlert('Token has expired, please login again', 'error')
                     handleLogout()
                 } else {
-                    alert('Error updating topic')
+                    toastAlert('Error updating topic', 'error')
                 }
 
             }
@@ -67,14 +68,14 @@ function TopicForm() {
                     }
                 })
 
-                alert('Successfully registered topic')
+                toastAlert('Successfully registered topic', 'success')
 
             } catch (error: any) {
                 if (error.toString().includes('403')) {
-                    alert('Token has expired, please login again')
+                    toastAlert('Token has expired, please login again', 'error')
                     handleLogout()
                 } else {
-                    alert('Error registering topic')
+                    toastAlert('Error registering topic', 'error')
                 }
             }
         }
@@ -87,7 +88,7 @@ function TopicForm() {
 
     useEffect(() => {
         if (token === '') {
-            alert('You must be logged in');
+            toastAlert('You must be logged in', 'warning');
             navigate('/login');
         }
     }, [token]);

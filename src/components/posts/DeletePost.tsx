@@ -1,8 +1,9 @@
-import { useContext, useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
-import { AuthContext } from '../../contexts/AuthContext'
-import { search, remove } from '../../services/Service'
-import Post from '../../models/Post'
+import { useContext, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
+import { search, remove } from '../../services/Service';
+import { toastAlert } from '../../util/toastAlert';
+import Post from '../../models/Post';
 
 function DeletePost() {
     const [post, setPost] = useState<Post>({} as Post)
@@ -23,7 +24,7 @@ function DeletePost() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('Token has expired, please login again')
+                toastAlert('Token has expired, please login again', 'error')
                 handleLogout()
             }
         }
@@ -31,7 +32,7 @@ function DeletePost() {
 
     useEffect(() => {
         if (token === '') {
-            alert('You must be logged in')
+            toastAlert('You must be logged in', 'warning')
             navigate('/login')
         }
     }, [token])
@@ -53,10 +54,10 @@ function DeletePost() {
                     'Authorization': token
                 }
             })
-            alert('Successfully deleted post')
+            toastAlert('Successfully deleted post', 'success')
 
         } catch (error) {
-            alert('Error deleting post')
+            toastAlert('Error deleting post', 'error')
         }
         back()
     }

@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-import Topic from '../../models/Topic'
+import { Link } from 'react-router-dom';
+import Topic from '../../models/Topic';
 
 interface TopicCardProps {
     topic: Topic

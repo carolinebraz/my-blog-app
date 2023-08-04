@@ -1,8 +1,9 @@
-import { useContext, useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router'
-import { AuthContext } from '../../contexts/AuthContext'
-import { search, remove } from '../../services/Service'
-import Topic from '../../models/Topic'
+import { useContext, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router';
+import { AuthContext } from '../../contexts/AuthContext';
+import { search, remove } from '../../services/Service';
+import { toastAlert } from '../../util/toastAlert';
+import Topic from '../../models/Topic';
 
 function DeleteTopic() {
     const [topic, setTopic] = useState<Topic>({} as Topic)
@@ -23,7 +24,7 @@ function DeleteTopic() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('Token has expired, please login again')
+                toastAlert('Token has expired, please login again', 'error')
                 handleLogout()
             }
         }
@@ -31,7 +32,7 @@ function DeleteTopic() {
 
     useEffect(() => {
         if (token === '') {
-            alert('You must be logged in')
+            toastAlert('You must be logged in', 'warning')
             navigate('/login')
         }
     }, [token])
@@ -53,10 +54,10 @@ function DeleteTopic() {
                     'Authorization': token
                 }
             })
-            alert('Successfully deleted topic')
+            toastAlert('Successfully deleted topic', 'success')
 
         } catch (error) {
-            alert('Error deleting topic')
+            toastAlert('Error deleting topic', 'error')
         }
 
         back()
