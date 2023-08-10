@@ -12,23 +12,16 @@ function Navbar() {
         toastAlert('See you soon', 'info')
     }
 
-    let isLogged
-
-    if (user.token !== "") {
-        isLogged = true;
-    }
-
     return (
         <>
             <header className="text-gray-600 body-font">
                 <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
-                    <Link to='/home' className="flex title-font font-medium items-center text-gray-900 hover:font-bold mb-4 md:mb-0">
-                        <img src={icon} alt="Butterfly Logo" />
-                        <span className="ml-3 text-xl">My Blog</span>
-                    </Link>
-
-                    {isLogged ? (
+                    {user.token !== "" ? (
                         <>
+                            <Link to='/home' className="flex title-font font-medium items-center text-gray-900 hover:font-bold mb-4 md:mb-0">
+                                <img src={icon} alt="Butterfly Logo" />
+                                <span className="ml-3 text-xl">My Blog</span>
+                            </Link>
                             <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
                                 <Link to='/posts' className='mr-5 hover:text-gray-900 hover:font-bold'>Posts</Link>
                                 <Link to='/addPost' className='mr-5 hover:text-gray-900 hover:font-bold'>New post</Link>
@@ -45,7 +38,12 @@ function Navbar() {
                             </button>
                         </>
                     ) : (
-                        <></>
+                        <>
+                            <Link to='/' className="flex title-font font-medium items-center text-gray-900 hover:font-bold mb-4 md:mb-0">
+                                <img src={icon} alt="Butterfly Logo" />
+                                <span className="ml-3 text-xl">My Blog</span>
+                            </Link>
+                        </>
                     )}
                 </div>
             </header>
