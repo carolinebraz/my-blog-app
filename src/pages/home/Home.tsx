@@ -1,21 +1,28 @@
-import { useContext } from 'react';
-import { Link } from 'react-router-dom'
-import { UserContext } from '../../contexts/UserContext';
-
 import './Home.css';
-import homeLogo from '../../assets/homeLogo.svg';
+import { AuthContext } from '../../contexts/AuthContext';
+import { useContext, useEffect } from 'react';
+import { toastAlert } from '../../util/toastAlert';
+import { useNavigate } from 'react-router-dom';
+import homeLogo from '../../assets/img/homeLogo.svg';
 
 function Home() {
-    const { name } = useContext(UserContext);
+    const { user } = useContext(AuthContext)
+    const token = user.token;
+
+    let navigate = useNavigate();
+
+    useEffect(() => {
+        if (token === '') {
+            toastAlert('You must be logged in', 'warning');
+            navigate('/login');
+        }
+    }, [token]);
+
     return (
         <>
             <div className="flex justify-center items-center">
                 <div>
-                    <h2 className="text-slate-900 text-5xl  my-4">Home</h2>
-                    <h2 className="text-slate-900 text-4xl ">Welcome, {name} (:</h2>
-                    <Link to="/login" className="my-4 rounded bg-indigo-400 hover:bg-indigo-900 text-white w-1/2 py-2 flex justify-center">
-                        Back to Login
-                    </Link>
+                    <h1 className="text-slate-900 text-4xl  my-4">Welcome</h1>
                 </div>
             </div>
             <img src={homeLogo} alt="Imagem Tela Inicial" className="img" />
