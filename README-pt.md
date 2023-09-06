@@ -1,5 +1,5 @@
 <h5 align="right">
-	This file is avaliable in <a href=https://github.com/carolinebraz/my-blog-app/blob/main/README.md> English </a> :us:
+	This file is also available in <a href=https://github.com/carolinebraz/my-blog-app/blob/main/README.md> English </a> :us:
 </h5>
 
 # <p align="center"> My Blog :pencil: </p>
