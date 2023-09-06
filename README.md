@@ -1,27 +1,77 @@
-# React + TypeScript + Vite
+<h5 align="right">
+	Este arquivo também está disponível em <a href=https://github.com/carolinebraz/my-blog-app/blob/main/README-pt.md> Português </a> :brazil: 
+</h5>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# <p align="center"> My Blog :pencil: </p>
 
-Currently, two official plugins are available:
+Front-end of the Personal Blog project developed using `React + Typescript + Vite` during the Full Stack Web Development course at Generation Brazil.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+• [Features](#features-sparkles)
+• [Layout](#layout-art)
+• [Prerequisites](#prerequisites-warning)
+• [Technologies](#technologies-computer)
+• [Run](#run-arrow_foward)
+• [Deploy](#deploy-rocket)
+• [License](#license-lock)
 
-## Expanding the ESLint configuration
+### Features :sparkles:  
+- [x] User registration and authentication
+- [x] Registration, editing, and deletion of themes and posts
+- [x] Feed of themes and posts
+- [x] User profile page
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Layout :art:  
+Login | Sign up | Home | Profile | Posts
+:---:|:---:|:---:|:---:|:---:
+<img src="src/assets/screenshots/login.png" width="200"> | <img src="src/assets/screenshots/register.png" width="200"> | <img src="src/assets/screenshots/home.png" width="200"> | <img src="src/assets/screenshots/profile.png" width="200"> | <img src="src/assets/screenshots/posts.png" width="200">
 
-- Configure the top-level `parserOptions` property like this:
+For more details, please visit: [My Blog Project](https://my-blog-app-lilac.vercel.app/)
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+### Prerequisites :warning: 
+For development, you will need to have installed on your machine a code versioning tool, a JavaScript runtime environment, and a code editor. 
+- [Git](https://git-scm.com/)
+- [Nodejs ^ 17.9.1](https://nodejs.org/en/)
+- [VSCode](https://code.visualstudio.com/)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Technologies :computer:
+- [React ^ 18.2.0](https://react.dev/)
+- [Typescript ^ 5.0.2](https://www.typescriptlang.org/)
+- [Vite ^ 4.4.5](https://vitejs.dev/) 
+- [Axios](https://axios-http.com/ptbr/docs/intro)
+- [React Router DOM](https://www.npmjs.com/package/react-router-dom)
+- [React Loader Spinner](https://www.npmjs.com/package/react-loader-spinner)
+- [React Toastify](https://www.npmjs.com/package/react-toastify)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+### Run :arrow_forward:  
+1. Clone the project  
+
+    ```
+    git clone https://github.com/carolinebraz/my-blog-app.git  
+    ```
+
+2. Install the dependencies  
+
+    ```
+    yarn  
+    ```
+
+3. Run the app  
+
+    ```
+    yarn run dev   
+    ```
+
+4. Go to the project's localhost  
+	- [http://localhost:5173/](http://localhost:5173/)
+
+### Deploy :rocket:
+This project is temporarily hosted for free on the servers of [Vercel](https://vercel.com/) and [Render](https://render.com/).
+
+- Front end: [https://my-blog-app-lilac.vercel.app/](https://my-blog-app-lilac.vercel.app/)
+- Back end: [https://myblog-bfkt.onrender.com/](https://myblog-bfkt.onrender.com/)
+
+### License :lock:
+Copyright &copy; 2023 - Caroline Braz
+
+[MIT License](./LICENSE)
