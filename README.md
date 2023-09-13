@@ -10,7 +10,7 @@ Front-end of the Personal Blog project developed using `React + Typescript + Vit
 • [Layout](#layout-art)
 • [Prerequisites](#prerequisites-warning)
 • [Technologies](#technologies-computer)
-• [Run](#run-arrow_foward)
+• [Run](#run-arrow_forward)
 • [Deploy](#deploy-rocket)
 • [License](#license-lock)
 
